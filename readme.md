@@ -62,11 +62,12 @@ Smart ATS is a Streamlit web application designed to help job seekers improve th
    - Upload your resume in PDF format.
    - Click the "Submit" button to receive feedback.
 
-
 ## Acknowledgements
 - Streamlit for the interactive web framework.
 - Google Generative AI for the powerful content generation and analysis capabilities.
 - PyPDF2 for PDF text extraction.
+
+App link:https://smart-ats-wc2iraxzubb4klygaucuaj.streamlit.app/
 
 ---
 
