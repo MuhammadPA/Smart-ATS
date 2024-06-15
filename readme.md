@@ -1,7 +1,3 @@
-Certainly! Below is a README file for the provided code.
-
----
-
 # Smart ATS
 
 Smart ATS is a web application designed to help users improve their resumes for better matching with job descriptions using advanced NLP techniques and AI. The application extracts text from uploaded resumes, compares it with the provided job description, and offers feedback on the match percentage, missing keywords, and a profile summary.
