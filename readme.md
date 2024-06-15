@@ -92,10 +92,6 @@ After receiving the feedback, you can rate the usefulness of the feedback and pr
 
 We appreciate your feedback to help improve this application. Please use the feedback section in the app to rate its usefulness and provide any comments or suggestions.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
 
 - Hugging Face for the `transformers` library
