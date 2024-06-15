@@ -1,72 +1,114 @@
+Certainly! Below is a README file for the provided code.
+
+---
+
 # Smart ATS
 
-## Overview
-Smart ATS is a Streamlit web application designed to help job seekers improve their resumes to better match job descriptions. The app uses Google Generative AI to act as an Application Tracking System (ATS) with expertise in the tech field, software engineering, data science, data analysis, and big data engineering. The system evaluates resumes based on a provided job description and suggests improvements by identifying missing keywords and providing a match percentage.
+Smart ATS is a web application designed to help users improve their resumes for better matching with job descriptions using advanced NLP techniques and AI. The application extracts text from uploaded resumes, compares it with the provided job description, and offers feedback on the match percentage, missing keywords, and a profile summary.
 
 ## Features
-- **Job Description Analysis**: Input a job description and get a detailed analysis of your resume's match to the job requirements.
-- **Resume Upload**: Upload your resume in PDF format.
-- **AI-Powered Feedback**: Receive AI-generated feedback on how to improve your resume, including a match percentage and missing keywords.
-- **User Feedback**: Provide feedback on the usefulness of the AI-generated suggestions.
 
-## Technologies Used
-- **Streamlit**: A web framework for creating interactive web applications in Python.
-- **Google Generative AI**: Used for generating content and providing analysis of resumes.
-- **PyPDF2**: A Python library for reading and extracting text from PDF files.
-- **dotenv**: For loading environment variables.
+- Extracts text from PDF resumes
+- Computes cosine similarity between resume and job description using BERT embeddings
+- Uses Google Generative AI to provide feedback on resume matching
+- User feedback mechanism for continuous improvement
 
-## Setup and Installation
+## Installation
 
 ### Prerequisites
-- Python 3.7 or higher
-- Streamlit
-- Google Generative AI API key
 
-### Installation
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/smart-ats.git
-   cd smart-ats
-   ```
+Ensure you have the following installed on your machine:
 
-2. **Create a virtual environment and activate it**
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate   # On Windows, use `venv\Scripts\activate`
-   ```
+- Python 3.7 or later
+- pip (Python package installer)
 
-3. **Install the required packages**
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Install Dependencies
 
-4. **Set up environment variables**
-   - Create a `.env` file in the root directory of the project.
-   - Add your Google API key to the `.env` file:
-     ```plaintext
-     GOOGLE_API_KEY=your_api_key_here
-     ```
+1. Clone the repository:
+
+```sh
+git clone https://github.com/yourusername/smart-ats.git
+cd smart-ats
+```
+
+2. Install the required Python packages:
+
+```sh
+pip install -r requirements.txt
+```
+
+### Required Environment Variables
+
+Create a `.env` file in the root directory of your project and add your Google API key:
+
+```
+GOOGLE_API_KEY=your_google_api_key
+```
 
 ## Usage
 
-1. **Run the Streamlit app**
-   ```bash
-   streamlit run app.py
-   ```
+Run the Streamlit application with the following command:
 
-2. **Open the web app**
-   - The app will open in your default web browser, or you can navigate to `http://localhost:8501`.
+```sh
+streamlit run app.py
+```
 
-3. **Input job description and upload resume**
-   - Paste the job description in the provided text area.
-   - Upload your resume in PDF format.
-   - Click the "Submit" button to receive feedback.
+### Uploading a Resume and Job Description
 
-## Acknowledgements
-- Streamlit for the interactive web framework.
-- Google Generative AI for the powerful content generation and analysis capabilities.
-- PyPDF2 for PDF text extraction.
+1. Paste the job description in the provided text area.
+2. Upload your resume as a PDF file.
+3. Click the "Submit" button to get feedback on your resume.
 
+### Providing Feedback
+
+After receiving the feedback, you can rate the usefulness of the feedback and provide additional comments or suggestions.
+
+## Code Explanation
+
+### Main Components
+
+- **Google Generative AI Configuration**: Configures the Google Generative AI using the provided API key.
+- **Transformer Model**: Loads the pre-trained BERT model for generating embeddings.
+- **PDF Text Extraction**: Extracts text from uploaded PDF resumes.
+- **Cosine Similarity Calculation**: Computes the similarity between resume and job description embeddings.
+- **AI Response Generation**: Uses Google Generative AI to provide feedback on resume matching.
+- **Streamlit UI**: Provides a user-friendly interface for uploading resumes, inputting job descriptions, and viewing feedback.
+
+### Functions
+
+- `get_embeddings(text)`: Generates embeddings for the given text using the BERT model.
+- `cosine_similarity(emb1, emb2)`: Computes cosine similarity between two sets of embeddings.
+- `get_gemini_response(input_text)`: Gets a response from Google Generative AI based on the provided prompt.
+- `input_pdf_text(uploaded_file)`: Extracts text from the uploaded PDF file.
+- `input_prompt`: Template for generating AI prompt with the job description and resume text.
+
+### Streamlit Application Flow
+
+1. Users input the job description and upload the resume.
+2. The application extracts text from the resume.
+3. It generates embeddings for both the resume and job description.
+4. Computes the similarity score.
+5. Prepares the AI prompt and fetches a response from Google Generative AI.
+6. Displays the matching percentage, missing keywords, and profile summary.
+7. Collects user feedback for continuous improvement.
+
+## Feedback
+
+We appreciate your feedback to help improve this application. Please use the feedback section in the app to rate its usefulness and provide any comments or suggestions.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Hugging Face for the `transformers` library
+- Google Generative AI for providing the AI content generation capabilities
+- Streamlit for the easy-to-use web app framework
+
+---
+
+Feel free to customize this README file to better fit your specific needs or add more details as necessary.
 App link:https://smart-ats-wc2iraxzubb4klygaucuaj.streamlit.app/
 
 ---
